@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria: #000000; 
+    --cor-secundaria: #FDB813; 
+    --cor-terciaria: #555555; 
+    --cor-texto-claro: #FFFFFF;
+    --cor-texto-escuro: #333333; 
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-terciaria));
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.batman-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 3.5em;
+    color: var(--cor-secundaria);
+    text-shadow: 4px 4px var(--cor-terciaria);
+    margin: 0;
+}
+
+/* Seções */
+.section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--cor-terciaria);
+}
+
+.section h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5em;
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px var(--cor-primaria);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid var(--cor-secundaria);
+}
+
+.section p {
+    text-align: justify;
+    font-size: 1.1em;
+    color: var(--cor-texto-claro);
+}
+
+/* Cards (Aliados e Vilões) */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--cor-terciaria);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    max-width: 100%;
+    height: 200px; /* Altura fixa para as imagens dos cards */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid var(--cor-primaria);
+}
+
+.card h3 {
+    font-family: 'Bangers', cursive;
+    color: var(--cor-secundaria);
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95em;
+    color: var(--cor-texto-claro);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 3px solid var(--cor-secundaria);
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .content-wrapper {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .section-image {
+        max-width: 40%;
+        margin-right: 20px;
+    }
+
+    .section p {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 20px 15px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; 
+    }
+}
